@@ -69,7 +69,8 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
-          cars[index - 1].shapeColor = "red";
+          fill("green");
+          ellipse(x,y,60,60);
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }
@@ -85,7 +86,7 @@ class Game {
       player.update();
     }
 
-    if(player.distance >3500){
+    if(player.distance >4400){
       gameState = 2;
     }
 
@@ -94,6 +95,6 @@ class Game {
 
   end(){
 //    console.log("Game Ended");
-alert("Congratulations "+player.name+" "+"you won");
+console.log("Congratulations "+player.name+" "+"you won");
   }
-}o
+}
