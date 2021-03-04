@@ -45,6 +45,8 @@ class Game {
     form.hide();
 
     Player.getPlayerInfo();
+
+    player.getCarsAtEnd();
     
     if(allPlayers !== undefined){
       //var display_position = 100;
@@ -87,6 +89,8 @@ class Game {
     }
 
     if(player.distance >4400){
+      player.rank+= 1;
+      Player.updateCarsAtEnd(player.rank);
       gameState = 2;
     }
 
@@ -95,6 +99,6 @@ class Game {
 
   end(){
 //    console.log("Game Ended");
-console.log("Congratulations "+player.name+" "+"you won");
+console.log("Congratulations "+player.name+" "+"You got rank "+player.rank);
   }
 }
